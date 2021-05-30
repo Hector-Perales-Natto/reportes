@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Sicop</title>    
+
+	<link rel="stylesheet" type="text/css" href="css/sweetalert2.min.css">        
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">        
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css" th:href="@{/css/index.css}">
+	<link rel="stylesheet" type="text/css" href="css/acomoda.css">
+    <link rel="shortcut icon" href="img/favicon.ico">
+</head>
+<body onload="entrar.usuario.focus()">
+	<div class="modal-dialog text-center">
+		<div class="col-sm-8 main-section">
+			<div class="modal-content">
+				<div class="col-12 user-img">
+					<img src="img/password.png">
+				</div>
+				<form class="col-12" name="entrar" method="POST" enctype="multipart/form-data" action="">
+					<div class="form-group">
+						<p style="color: #FFFFFF;"><strong>SISTEMA DE REPORTES DE POLIZA, SIPREP Y ECONOMIAS</strong></p>
+					</div>
+
+					<div class="form-group" id="user-group">
+						<input type="text" class="form-control" placeholder="Nombre de usuario" id="usuario" name="usuario">
+					</div>
+
+					<div class="form-group" id="contrasena-group">
+						<input type="password" class="form-control" placeholder="Contraseña" id="clave" name="clave">
+					</div>
+					<button type="submit" class="btn btn-primary" id="ingresar" name="ingresar" value="&rarr;"><i class="fas fa-sign-in-alt"></i>  Ingresar </button>					
+				</form>
+				<div class="col-12 forgot">
+					<a href="#" class="olvideContraseña">Olvidé mi contraseña!</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="page-wrapper">            
+		<!-- ============================================================== -->
+		<!-- footer -->
+		<!-- ============================================================== -->
+		<footer class="footer">
+			<p class="caem">Comisión del Agua del Estado de México.</p>
+			<p class="umai">Unidad de Modernización Administrativa e Informática.</p>
+			<p class="subdir">Subdirección de Informática.</p>
+		</footer>
+		<!-- ============================================================== -->
+		<!-- End footer -->
+		<!-- ============================================================== -->
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/sweetalert2.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+</body>
+</html>
+
+<script type="text/javascript">
+	$(document).ready(function (){
+    	$('.olvideContraseña').on('click', function (e){
+        	e.preventDefault();
+        	swal({
+				position: "top",
+				text: "Póngase en contacto con la UMAI, para que se le proporcione una nueva contraseña!",
+				confirmButtonColor: "#DD6B55"
+			}).then(function() {
+				window.location.href = "index.php?pagina=inicio.php";
+			});
+    	})
+	})
+</script>
